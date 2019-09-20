@@ -1,0 +1,20 @@
+<div class="container">
+	<h3>Checkbox Selection </h3>
+	<hr>
+		<div class="form-group">
+			<form [formGroup]="myForm">
+				<div *ngFor="let data of emails">
+					<div class="form-check">
+						<input  class="form-check-input" type="checkbox" 
+							(change)="onChange(data.email, $event.target.checked)">
+						    <label class="form-check-label" for="exampleCheck1">{{data.email}}</label>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	<hr>
+	<div> 
+		<pre>Form values: {{myForm.value | json}}</pre>
+	</div>
+</div>
